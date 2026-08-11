@@ -24,6 +24,11 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+         creds: ${{ secrets.AZURE_LOGIN }}
+
       - name: Terraform Format Check
         run: terraform fmt 
 
